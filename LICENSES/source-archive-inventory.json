@@ -1,0 +1,172 @@
+{
+  "archives": [
+    {
+      "file": "sources/pymobiledevice3-7.6.0.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/69/d8/a012153603416d10695e89d50954d22674e793c2f4b76a70a2795baf3a6b/pymobiledevice3-7.6.0.tar.gz",
+      "bytes": 31603776,
+      "sha256": "519b1adee41e03529d62d238a5a6447186d0512d624af078b377f1b98ea6af4a",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "pymobiledevice3",
+      "version": "7.6.0",
+      "metadataUrl": "https://pypi.org/pypi/pymobiledevice3/7.6.0/json"
+    },
+    {
+      "file": "sources/pillow_heif-1.8.0.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/bb/4c/d5319a1f276c70528ff97893afc42a300ff28029e27ca8de89bb3b271680/pillow_heif-1.8.0.tar.gz",
+      "bytes": 17395353,
+      "sha256": "e47c27432c6fd3d66c22f0de9f27fd379383b646c947520bc485854ce72060d0",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "pillow-heif",
+      "version": "1.8.0",
+      "metadataUrl": "https://pypi.org/pypi/pillow-heif/1.8.0/json"
+    },
+    {
+      "file": "sources/bpylist2-4.1.1.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/ca/34/eb90ff6be953f6e4df08d4e8c0b761bea144242b6d711e922113411cc631/bpylist2-4.1.1.tar.gz",
+      "bytes": 18000,
+      "sha256": "0cc63284aee42f5c7e0ec87f8f59cdd35aaed05ad12d866b1868ea0c0caaafe1",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "bpylist2",
+      "version": "4.1.1",
+      "metadataUrl": "https://pypi.org/pypi/bpylist2/4.1.1/json"
+    },
+    {
+      "file": "sources/developer_disk_image-0.3.0.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/52/f5/16c742e98191761d0925ed424468e3bec14503644c84851046602667d3c3/developer_disk_image-0.3.0.tar.gz",
+      "bytes": 14278,
+      "sha256": "1fb9841dcc5cf81e697b6e0a9c14909c059c1893d675b38398a91c08cb7ba8bc",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "developer_disk_image",
+      "version": "0.3.0",
+      "metadataUrl": "https://pypi.org/pypi/developer_disk_image/0.3.0/json"
+    },
+    {
+      "file": "sources/enum-compat-0.0.3.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/41/46/8ed2368976d934652d8f33f1fdd86f5580fab45e890c90a848e83097a093/enum-compat-0.0.3.tar.gz",
+      "bytes": 1389,
+      "sha256": "3677daabed56a6f724451d585662253d8fb4e5569845aafa8bb0da36b1a8751e",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "enum-compat",
+      "version": "0.0.3",
+      "metadataUrl": "https://pypi.org/pypi/enum-compat/0.0.3/json"
+    },
+    {
+      "file": "sources/hexdump-3.3.zip",
+      "url": "https://files.pythonhosted.org/packages/55/b3/279b1d57fa3681725d0db8820405cdcb4e62a9239c205e4ceac4391c78e4/hexdump-3.3.zip",
+      "bytes": 12658,
+      "sha256": "d781a43b0c16ace3f9366aade73e8ad3a7bd5137d58f0b45ab2d3f54876f20db",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "hexdump",
+      "version": "3.3",
+      "metadataUrl": "https://pypi.org/pypi/hexdump/3.3/json"
+    },
+    {
+      "file": "sources/runs-1.3.0.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/f2/ae/095cb626504733e288a81f871f86b10530b787d77c50193c170daaca0df1/runs-1.3.0.tar.gz",
+      "bytes": 4585,
+      "sha256": "cca304b631dbefec598c7bfbcfb50d6feace6d3a968734b67fd42d3c728f5a05",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "runs",
+      "version": "1.3.0",
+      "metadataUrl": "https://pypi.org/pypi/runs/1.3.0/json"
+    },
+    {
+      "file": "sources/ffmpeg-7.1.tar.xz",
+      "url": "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz",
+      "component": "FFmpeg",
+      "version": "7.1",
+      "bytes": 11011364,
+      "sha256": "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6",
+      "verifiedAgainstPublisherSha256": false,
+      "signatureVerification": "FFmpeg-source-verification.json"
+    },
+    {
+      "file": "sources/x264-b35605ace3ddf7c1a5d67a2eb553f034aef41d55.tar.gz",
+      "url": "https://code.videolan.org/videolan/x264/-/archive/b35605ace3ddf7c1a5d67a2eb553f034aef41d55/x264-b35605ace3ddf7c1a5d67a2eb553f034aef41d55.tar.gz",
+      "component": "x264",
+      "version": "b35605ace3ddf7c1a5d67a2eb553f034aef41d55",
+      "bytes": 1040327,
+      "sha256": "cd71a7515b0e9a012e1ac9b1f8415bebcaf6fc97d4db32286642ac4c0fbe24f9",
+      "verifiedAgainstPublisherSha256": false,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/nv-codec-headers-n12.1.14.0.tar.gz",
+      "url": "https://codeload.github.com/FFmpeg/nv-codec-headers/tar.gz/refs/tags/n12.1.14.0",
+      "component": "NVIDIA codec API headers",
+      "version": "12.1.14.0",
+      "bytes": 79598,
+      "sha256": "2fefaa227d2a3b4170797796425a59d1dd2ed5fd231db9b4244468ba327acd0b",
+      "verifiedAgainstPublisherSha256": false,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/libheif-1.23.4.tar.gz",
+      "url": "https://github.com/strukturag/libheif/releases/download/v1.23.4/libheif-1.23.4.tar.gz",
+      "component": "libheif",
+      "version": "1.23.4",
+      "bytes": 2217221,
+      "sha256": "d0c02b4b0e978f34a1974b6f3eea7975a537bf7a9195ffeea38e7242ff316fdd",
+      "verifiedAgainstPublisherSha256": true,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/libde265-1.1.3.tar.gz",
+      "url": "https://github.com/strukturag/libde265/releases/download/v1.1.3/libde265-1.1.3.tar.gz",
+      "component": "libde265",
+      "version": "1.1.3",
+      "bytes": 324452,
+      "sha256": "554228bd17788c99a7e63b37ab5634722190e6e2bf60c1dcb01cef328e133905",
+      "verifiedAgainstPublisherSha256": true,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/x265_4.3.tar.gz",
+      "url": "https://github.com/Multicorewareinc/x265/releases/download/4.3/x265_4.3.tar.gz",
+      "component": "x265",
+      "version": "4.3+1-e9b8812",
+      "bytes": 2052112,
+      "sha256": "83c53e4c8bbb8f1e33ed59e10a7d621d1d7801ca853910c3eb41f038b8ffb121",
+      "verifiedAgainstPublisherSha256": true,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/pillow-heif-build-v1.8.0.tar.gz",
+      "url": "https://codeload.github.com/bigcat88/pillow_heif/tar.gz/refs/tags/v1.8.0",
+      "component": "pillow-heif wheel build recipes",
+      "version": "1.8.0",
+      "bytes": 26866601,
+      "sha256": "3a8f93b47d6506ad4007aff6462a066dc6a8cb3a4610f022d46815ce6df905ae",
+      "verifiedAgainstPublisherSha256": false,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/ffmpeg-7.1.tar.xz.asc",
+      "url": "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz.asc",
+      "component": "FFmpeg source signature material",
+      "version": "7.1",
+      "bytes": 520,
+      "sha256": "9bd1689dce76b109034dcc4765a406e84e8799a2fd857b000c0a4d9744b70617",
+      "verifiedAgainstPublisherSha256": false
+    },
+    {
+      "file": "sources/ffmpeg-devel.asc",
+      "url": "https://ffmpeg.org/ffmpeg-devel.asc",
+      "component": "FFmpeg source signature material",
+      "version": "7.1",
+      "bytes": 1709,
+      "sha256": "397b3becedcd5a98769967ff1ff8501ddc89f8368b8f766e4701377d7dbaabe5",
+      "verifiedAgainstPublisherSha256": false
+    },
+    {
+      "file": "sources/nsis-3.13-src.tar.bz2",
+      "component": "NSIS",
+      "version": "3.13",
+      "url": "https://prdownloads.sourceforge.net/nsis/nsis-3.13-src.tar.bz2?download",
+      "sha256": "a8ffe024602d46b6d766f9e1ce30c324ad2a24daeacd3efc2642d436a0c157ac",
+      "bytes": 1819771,
+      "verifiedAgainstPublisherSha256": true,
+      "metadataUrl": "https://sourceforge.net/projects/nsis/best_release.json"
+    }
+  ]
+}

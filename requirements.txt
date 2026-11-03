@@ -1,0 +1,6 @@
+pymobiledevice3==7.6.0
+Pillow==12.3.0
+pillow-heif==1.8.0
+pywin32==312; sys_platform == 'win32'
+zeroconf==0.151.5
+construct-typing==0.7.0

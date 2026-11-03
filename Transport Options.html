@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EyeCopy · USB connection details</title>
+<style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#100c0b;color:#fff5ef;font:16px/1.65 system-ui,sans-serif}main{max-width:900px;margin:auto;padding:44px 32px 64px}h1{font-size:36px;line-height:1.2;letter-spacing:-1px}h2{color:#ff943e;font-size:23px;margin-top:32px}p,td,li{color:#e9dcd4}a{color:#ffae67}strong{color:white}table{border-collapse:collapse;width:100%}th,td{padding:12px;border-bottom:1px solid #443028;text-align:left;vertical-align:top}th{color:white}.panel{padding:20px 24px;border:1px solid #663124;border-radius:16px;background:linear-gradient(125deg,#27140e,#1b1010)}@media(max-width:600px){main{padding:28px 20px}h1{font-size:30px}}</style>
+</head>
+<body><main>
+<h1>USB connection details</h1>
+<p>EyeCopy includes its application dependencies. Device access also depends on Windows USB support, the cable and port, and the permissions granted by iOS or iPadOS.</p>
+<table><thead><tr><th>Component</th><th>What is needed</th></tr></thead><tbody>
+<tr><td>Desktop interface and transfer engine</td><td>Included in the portable package. No Node.js or Python installation.</td></tr>
+<tr><td>Video previews</td><td>Included preview tools. Downloaded originals retain their format.</td></tr>
+<tr><td>Explorer drag helpers</td><td>Included and precompiled. No compiler installation.</td></tr>
+<tr><td>Apple USB driver and background transport</td><td>Compatible installed support is required. Apple proprietary drivers are not bundled.</td></tr>
+<tr><td>Device Trust and app access</td><td>Approve on the device when prompted. EyeCopy cannot bypass these permissions.</td></tr>
+</tbody></table>
+<h2>First-time setup</h2>
+<div class="panel"><p>Install <a href="https://apps.microsoft.com/detail/9NP83LWLPZ9K">Apple Devices from the Microsoft Store</a> if compatible Apple USB support is missing. Open it once, connect an unlocked device and approve Trust. Apple provides <a href="https://support.apple.com/en-us/118290">download guidance</a> and a <a href="https://support.apple.com/en-us/108643?device-type=windows-pc">USB connection checklist</a>.</p><p>After setup, the Apple Devices window may stay closed while EyeCopy transfers files. Its background transport must remain available. Existing compatible Apple support can be reused. EyeCopy does not replace the installed driver binding or install a separate device service.</p></div>
+<h2>USB link and file-copy speed</h2>
+<p>A USB 3 link requires a supporting device, data cable and PC port. Some devices and cables support only USB 2. The negotiated link shown in the device panel is a connection ceiling, rather than measured file throughput.</p>
+<p>The transfer queue reports actual MB/s. Device file services, protocol overhead, storage speed, preview playback and other activity can reduce throughput. Installing Apple Devices alone does not guarantee USB 3, 10 Gbps or a specific copy speed. Avoid equating a cable's or port's advertised rate with the speed of an original-file transfer.</p>
+<h2>Accessible device folders</h2>
+<p>Photos App reads camera originals. Files App uses participating apps' shared Documents directories. It does not provide unrestricted access to Files, iCloud Drive, Safari Downloads or private storage. A separately signed device companion can expose its own Documents directory, but does not remove the Windows USB or device-permission requirements.</p>
+<p>The desktop USB route cannot delete items from the Photos library or send device files to Recently Deleted. Deletion inside supported shared-app folders is permanent and requires confirmation. Existing PC copies are not removed by device deletion.</p>
+<h2>Use without a connected device</h2>
+<p>Saved catalogues and cached previews remain available offline. Downloaded originals play from local storage. Obtaining new device files or previews, uploading, and streaming from the device require a connection.</p>
+<p><a href="GUIDE.html">Return to the operating guide</a> · <a href="https://support.apple.com/en-us/120402">Apple File Sharing</a> · <a href="https://support.apple.com/en-us/109054">Trust guidance</a></p>
+</main></body></html>

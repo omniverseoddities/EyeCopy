@@ -1,0 +1,88 @@
+EyeCopy - Windows installation
+
+REQUIREMENTS
+Windows 10/11 on Intel/AMD x64, a compatible iPhone or iPad, a data-capable USB
+cable, and enough PC disk space for your downloads. Windows ARM64 and 32-bit
+Windows are not supported by this package.
+
+1. INSTALL EYECOPY
+   On the repository's Releases page, download Setup-EyeCopy-1.0.0.exe and follow
+   its setup steps. The default per-user location is:
+   %LOCALAPPDATA%\Programs\EyeCopy
+   Setup adds a Windows Installed apps entry and a shortcut.
+
+   For portable use, download EyeCopy-Windows-x64.zip and use Extract All in
+   File Explorer. Keep the complete EyeCopy folder together and open EyeCopy.exe.
+   Do not run it from inside the ZIP. GitHub's Source code archive is for developers.
+
+2. SET UP APPLE USB SUPPORT
+   Install Apple Devices from the Microsoft Store if compatible Apple USB
+   support is not already installed:
+   https://apps.microsoft.com/detail/9NP83LWLPZ9K
+   Open Apple Devices once to complete setup. For Apple's instructions:
+   https://support.apple.com/en-us/118290
+   Its background USB support is required; its window can stay closed afterward.
+   Apple proprietary drivers are not bundled with EyeCopy.
+
+3. CONNECT
+   Open EyeCopy.exe. Connect your unlocked iPhone or iPad directly to a USB data
+   port, then approve Trust on the device if asked. Use a USB 3 cable and port
+   for a USB 3 link. Apple support installation alone does not guarantee speed.
+
+4. DOWNLOAD A FILE
+   Choose the device under Your devices, then open Photos App or Files App.
+   Select a file and use Download selected. Watch progress in Transfer queue.
+   The folder icon beside the device opens its PC download folder.
+
+   Default location: Videos\EyeCopy\device name
+   Settings -> Change default folder changes where future downloads go.
+   Existing downloads are not moved when this setting changes.
+
+5. UPLOAD A FILE
+   Choose Upload to Files and select local files. On first use, select an app
+   that exposes USB File Sharing. EyeCopy creates an EyeCopy folder inside
+   that app's Documents folder. This does not grant unrestricted access to
+   Files, iCloud Drive, Safari Downloads or private app storage.
+
+IF THE DEVICE DOES NOT APPEAR
+Unlock it, check the cable and USB port, and check whether Apple Devices can
+recognize it. Complete Trust prompts on the device. EyeCopy's Connection page
+shows available connection details. Apple's USB help:
+https://support.apple.com/en-us/108643?device-type=windows-pc
+
+No Python, Node.js or compiler installation is needed for either application package.
+This build is unsigned. Windows may identify its publisher as unknown. Verify
+the download's source and release checksum before deciding whether to run it;
+do not disable Windows protection to install EyeCopy.
+
+UPDATING EYECOPY
+Open Settings to check for a newer release and choose automatic update checks.
+UpdateEyeCopy.exe in the application folder opens the same controls.
+Use the publisher's GitHub release repository; if none is supplied, enter its
+repository URL in Settings. An installable update needs a stable GitHub Release
+with the Windows setup file and its matching SHA256SUMS.txt.
+
+Automatic checks are enabled once a repository is configured; you can turn
+them off. With no repository configured, EyeCopy makes no update requests.
+
+The updater verifies the download and asks before installing. Updates preserve
+settings, previews and downloaded originals. For a manual update, quit EyeCopy
+from its notification-area menu and run the new setup, or extract the complete
+portable package into a new folder.
+
+REMOVING EYECOPY
+Quit EyeCopy from its notification-area menu before uninstalling. Closing its
+window can leave it running in the background. Use its Windows Installed apps
+entry or open UninstallEyeCopy.exe in the application folder. Review the folders
+shown before confirming removal. The uninstaller clears known data in verified profiles, including
+%LOCALAPPDATA%\EyeCopy and registered dedicated custom profiles. This removes
+settings, catalogues, transfer history, download tracking and preview caches.
+Downloaded photos and videos remain in their saved folders. Shared Apple USB
+support stays installed. Unverified locations and unrelated files are retained
+and reported for manual review; their containing folders may remain.
+If EyeCopy is still running, quit it and retry the uninstaller.
+
+Deleting the application folder by hand leaves its separate profile in place.
+Use the included uninstaller when you want the application data cleared too.
+
+Open Connection & transfer guide inside EyeCopy for detailed use and limitations.

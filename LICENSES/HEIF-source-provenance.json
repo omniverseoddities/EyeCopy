@@ -1,0 +1,153 @@
+{
+  "component": "pillow-heif Windows native libraries",
+  "wrapperVersion": "1.8.0",
+  "binaryReportedVersions": {
+    "libheif": "1.23.4",
+    "libde265": "1.1.3",
+    "x265": "4.3+1-e9b8812"
+  },
+  "sourceArchives": [
+    {
+      "file": "sources/pillow_heif-1.8.0.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/bb/4c/d5319a1f276c70528ff97893afc42a300ff28029e27ca8de89bb3b271680/pillow_heif-1.8.0.tar.gz",
+      "bytes": 17395353,
+      "sha256": "e47c27432c6fd3d66c22f0de9f27fd379383b646c947520bc485854ce72060d0",
+      "verifiedAgainstPublisherSha256": true,
+      "component": "pillow-heif",
+      "version": "1.8.0",
+      "metadataUrl": "https://pypi.org/pypi/pillow-heif/1.8.0/json"
+    },
+    {
+      "file": "sources/libheif-1.23.4.tar.gz",
+      "url": "https://github.com/strukturag/libheif/releases/download/v1.23.4/libheif-1.23.4.tar.gz",
+      "component": "libheif",
+      "version": "1.23.4",
+      "bytes": 2217221,
+      "sha256": "d0c02b4b0e978f34a1974b6f3eea7975a537bf7a9195ffeea38e7242ff316fdd",
+      "verifiedAgainstPublisherSha256": true,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/libde265-1.1.3.tar.gz",
+      "url": "https://github.com/strukturag/libde265/releases/download/v1.1.3/libde265-1.1.3.tar.gz",
+      "component": "libde265",
+      "version": "1.1.3",
+      "bytes": 324452,
+      "sha256": "554228bd17788c99a7e63b37ab5634722190e6e2bf60c1dcb01cef328e133905",
+      "verifiedAgainstPublisherSha256": true,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/x265_4.3.tar.gz",
+      "url": "https://github.com/Multicorewareinc/x265/releases/download/4.3/x265_4.3.tar.gz",
+      "component": "x265",
+      "version": "4.3+1-e9b8812",
+      "bytes": 2052112,
+      "sha256": "83c53e4c8bbb8f1e33ed59e10a7d621d1d7801ca853910c3eb41f038b8ffb121",
+      "verifiedAgainstPublisherSha256": true,
+      "signatureVerification": null
+    },
+    {
+      "file": "sources/pillow-heif-build-v1.8.0.tar.gz",
+      "url": "https://codeload.github.com/bigcat88/pillow_heif/tar.gz/refs/tags/v1.8.0",
+      "component": "pillow-heif wheel build recipes",
+      "version": "1.8.0",
+      "bytes": 26866601,
+      "sha256": "3a8f93b47d6506ad4007aff6462a066dc6a8cb3a4610f022d46815ce6df905ae",
+      "verifiedAgainstPublisherSha256": false,
+      "signatureVerification": null
+    }
+  ],
+  "buildRecipes": [
+    {
+      "file": "native-build/GCC-RUNTIME-EXCEPTION.txt",
+      "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74"
+    },
+    {
+      "file": "native-build/MINGW-RUNTIME-COPYING.txt",
+      "sha256": "99a69660981156c21336fdb5661f89341b013c94e4bf9e1c7467b4745718397f"
+    },
+    {
+      "file": "native-build/libde265/PKGBUILD",
+      "sha256": "c6ce4da2f67ab13650fca6f7279b909557740912b385f9ad8c17dc120f8b047e"
+    },
+    {
+      "file": "native-build/libheif/PKGBUILD",
+      "sha256": "554408698b6b2855d61bb2554d2953003b8db84a8c303a7ffe3f6ec6f68dba08"
+    },
+    {
+      "file": "native-build/pillow-heif/pyproject.toml",
+      "sha256": "a5cb5be4340e98bb35776130f9df8bae845da5ab8b0160490b8e7bece36aa075"
+    },
+    {
+      "file": "native-build/pillow-heif/wheels.yml",
+      "sha256": "20d319c99028d6264558adcefecd846a1949a524c7ad1ae26bd70d0bd7a2ef30"
+    },
+    {
+      "file": "native-build/x265/0001-missing-include.patch",
+      "sha256": "20e240c5365665e254b6030a458376fac16c1797903d607cae5863b280859a8f"
+    },
+    {
+      "file": "native-build/x265/PKGBUILD",
+      "sha256": "440ec07f857cc7490c91e95b27d1cc47adfbfd45305b95990ac95f46fd2fae6f"
+    }
+  ],
+  "upstreamBuildReferences": {
+    "pillowHeifTag": "https://github.com/bigcat88/pillow_heif/tree/v1.8.0",
+    "msys2Libde265RecipeCommit": "c32cb4bc3e7de5dfc31415748daabe79c469d5fb",
+    "msys2X265RecipeCommit": "f6ae36581d8dd1f6878442575cc8471830b863ed"
+  },
+  "matchingVersionSourceAndBuildMaterialSupplied": true,
+  "byteForByteWheelRebuildClaimed": false,
+  "runtimeException": "native-build/GCC-RUNTIME-EXCEPTION.txt",
+  "note": "The original upstream wheel notice is preserved verbatim. Its x265 version label differs from the Windows library metadata. The supplied x265 4.3 release archive records changeset e9b8812 and release distance 1, matching the bundled encoder.",
+  "nativeBinaryFiles": [
+    {
+      "file": "_pillow_heif.cp310-win_amd64.pyd",
+      "sha256": "57c682d167555663f54f4d945580a9b40a418563d823a6aef1e59f82ccb74614",
+      "bytes": 59392
+    },
+    {
+      "file": "libheif-30fc1b3ceee9088934615cbf4948eba3.dll",
+      "sha256": "6223de1181ea35f394b380f2142be64406659ebf7026a2cb61d181c16e42ae9b",
+      "bytes": 2201088
+    },
+    {
+      "file": "libde265-0-863aced21c291386b51bbbd6c57331e8.dll",
+      "sha256": "a7f02f5bfa0072ea39aabfc6bdf51f35e972bc0b0dc5fe7910840fae3b7245de",
+      "bytes": 960000
+    },
+    {
+      "file": "libx265-217-8a7f7f4ebe0ffaa73ce4bb306c2d18d6.dll",
+      "sha256": "ec2805e477f2d144b8964234689abe59ab0331fc450efd2d6d5b68b5d1fc31da",
+      "bytes": 22667339
+    },
+    {
+      "file": "libgcc_s_seh-1-7579db3ccd9543f896752ed45d8cb013.dll",
+      "sha256": "1a67c59f99d6ffbd8b96ac9276fb7e625b2769f5b355503d568e85657439f865",
+      "bytes": 147968
+    },
+    {
+      "file": "libstdc++-6-a168feb806be6a6b9920422b91e14e6f.dll",
+      "sha256": "5323c98bdb4480833da9d1b36993503bdc5d1120dbfb3ac067cc8957b34c4568",
+      "bytes": 2652672
+    },
+    {
+      "file": "libwinpthread-1-cd4f4bcf906810bdc5341685d1696fa6.dll",
+      "sha256": "cd4f4bcf906810bdc5341685d1696fa6005c76888acfb5a1397af4c319517859",
+      "bytes": 62976
+    }
+  ],
+  "runtimeMetadata": {
+    "libheif": "1.23.4",
+    "HEIF": "x265 HEVC encoder (4.3+1-e9b8812)",
+    "AVIF": "",
+    "encoders": {
+      "x265": "x265 HEVC encoder (4.3+1-e9b8812)",
+      "mask": "mask"
+    },
+    "decoders": {
+      "libde265": "libde265 HEVC decoder, version 1.1.3"
+    }
+  }
+}

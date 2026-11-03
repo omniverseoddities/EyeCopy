@@ -1,0 +1,12 @@
+{
+  "version": "7.6.0",
+  "installedPythonSourceFilesCompared": 163,
+  "sourceArchive": "sources/pymobiledevice3-7.6.0.tar.gz",
+  "wheelSourceOverlays": [
+    {
+      "file": "source-overlays/pymobiledevice3-7.6.0/pymobiledevice3/_version.py",
+      "sha256": "4905321e890ecea335cef67d628e3bbc9d5d1339487640090633553ffa1c8281"
+    }
+  ],
+  "explanation": "The published sdist and installed wheel differ only in generated _version.py commit metadata (sdist g63c166600; wheel None). The installed generated file is supplied as an overlay; the upstream archive remains unmodified."
+}

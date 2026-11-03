@@ -1,0 +1,10 @@
+* text=auto eol=lf
+# Preserve dependency notices and source-provenance hashes byte for byte.
+LICENSES/** -text
+build-support/media/** -text
+*.sh text eol=lf
+*.png binary
+*.ico binary
+*.zip binary
+*.gz binary
+*.xz binary

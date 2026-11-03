@@ -1,0 +1,44 @@
+name: Windows checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          architecture: x64
+      - name: Create Python environment
+        run: python -m venv .venv
+      - name: Install Python dependencies
+        run: .venv\Scripts\python.exe -m pip install -r requirements-lock.txt -r requirements-build.txt
+      - name: Install desktop dependencies
+        run: npm ci
+      - name: Check application syntax
+        run: npm run check
+      - name: Test backend
+        run: .venv\Scripts\python.exe -m unittest discover -s backend -p test_*.py
+      - name: Test release configuration
+        run: .venv\Scripts\python.exe -m unittest discover -s tests -p test_*.py
+      - name: Test desktop services
+        run: node --test tests/*.test.js
+      - name: Test uninstall safety
+        run: .venv\Scripts\python.exe installer\TestCleanup.py
+      - name: Test update launcher
+        run: .venv\Scripts\python.exe updater\TestLauncher.py
+      - name: Test offline thumbnails
+        run: node_modules\electron\dist\electron.exe scripts\RendererOfflineThumbnailsFixture.js
+      - name: Test settings interface
+        run: node_modules\electron\dist\electron.exe scripts\RendererSettingsFixture.js
+      - name: Test updates interface
+        run: node_modules\electron\dist\electron.exe scripts\RendererUpdatesFixture.js

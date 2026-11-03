@@ -1,0 +1,29 @@
+EyeCopy device companion
+
+The optional iPhone/iPad companion exposes its Documents folder in Files as
+On My iPhone > EyeCopy or On My iPad > EyeCopy. The Windows application recognizes
+the com.eyecopy.mobile bundle identifier and uploads directly to that folder.
+The companion is provided as source only and is not required for normal USB
+transfers through another app that supports Apple File Sharing.
+
+Build and install
+1. On a Mac, install Xcode and XcodeGen.
+2. Run xcodegen generate in this directory, then open EyeCopy.xcodeproj.
+3. In Signing & Capabilities, select your Apple development team. The supplied
+   bundle identifier must be available to that team. If you use another bundle
+   identifier, update the Windows application's companion allowlist to match.
+4. Connect the device, select it as the Xcode run destination, and build/run.
+5. Complete Apple's signing and developer approval steps as prompted.
+6. Open the companion once. In Files, browse to the EyeCopy location. Refresh
+   the Windows application to discover it.
+
+Installing on a physical device requires valid Apple signing and provisioning.
+An unsigned application cannot be installed by copying this source to a device.
+Keep signing certificates, passwords, private keys, and provisioning files out
+of the repository. App Store and TestFlight distribution require their own
+Apple distribution setup.
+
+The companion provides a documents folder. It does not implement Photos access,
+external-drive control, or a separate transfer service. Without it, select an
+existing File Sharing provider in the Windows app; EyeCopy will create its
+EyeCopy upload folder inside that provider's Documents directory.

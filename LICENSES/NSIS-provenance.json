@@ -1,0 +1,19 @@
+{
+  "component": "NSIS",
+  "version": "3.13",
+  "downloadUrl": "https://prdownloads.sourceforge.net/nsis/nsis-3.13.zip?download",
+  "publisherMetadataUrl": "https://sourceforge.net/projects/nsis/files/NSIS%203/3.13/",
+  "archiveSha256": "ba63dffc4410ee89193e1cb5a41989991bd77c61068da17e3156d136b7b0b3d8",
+  "publisherChecksumVerified": true,
+  "scope": "Build tool and bundled installer engine; no global installation.",
+  "sourceArchive": {
+    "file": "sources/nsis-3.13-src.tar.bz2",
+    "component": "NSIS",
+    "version": "3.13",
+    "url": "https://prdownloads.sourceforge.net/nsis/nsis-3.13-src.tar.bz2?download",
+    "sha256": "a8ffe024602d46b6d766f9e1ce30c324ad2a24daeacd3efc2642d436a0c157ac",
+    "bytes": 1819771,
+    "verifiedAgainstPublisherSha256": true,
+    "metadataUrl": "https://sourceforge.net/projects/nsis/best_release.json"
+  }
+}

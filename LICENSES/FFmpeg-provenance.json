@@ -1,0 +1,72 @@
+{
+  "component": "FFmpeg",
+  "version": "7.1",
+  "binaryRelativePath": "vendor/ffmpeg/ffmpeg.exe",
+  "binarySha256": "df23f3d92c270d418de5899207577154f285026132ef881b1c42fb53164c2a6b",
+  "binaryBytes": 26188288,
+  "license": "GPL-3.0-or-later",
+  "provider": "Built from the supplied source and recipes",
+  "versionAndBuildConfiguration": "ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers\nbuilt with gcc 16.2.0 (GCC)\nconfiguration: --prefix='/usr/local' --target-os=mingw32 --arch=x86_64 --cc=gcc --ar=ar --ranlib=ranlib --nm=nm --disable-autodetect --enable-gpl --enable-version3 --enable-libx264 --enable-ffnvcodec --enable-nvenc --enable-nvdec --enable-cuvid --enable-static --disable-shared --disable-ffplay --disable-ffprobe --disable-doc --disable-debug --disable-postproc --disable-devices --enable-indev=lavfi --extra-cflags='-O3 -ffile-prefix-map=/usr/local=/usr/local -ffile-prefix-map=/usr/src/eyecopy-media=/usr/src/eyecopy-media' --extra-ldflags=-static --pkg-config-flags=--static\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.100 / 61. 19.100\nlibavformat    61.  7.100 / 61.  7.100\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  4.100 / 10.  4.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\n",
+  "sourceArchives": [
+    {
+      "archive": "sources/ffmpeg-7.1.tar.xz",
+      "folder": "ffmpeg",
+      "sha256": "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6",
+      "url": "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz"
+    },
+    {
+      "archive": "sources/x264-b35605ace3ddf7c1a5d67a2eb553f034aef41d55.tar.gz",
+      "folder": "x264",
+      "sha256": "cd71a7515b0e9a012e1ac9b1f8415bebcaf6fc97d4db32286642ac4c0fbe24f9",
+      "url": "https://code.videolan.org/videolan/x264/-/archive/b35605ace3ddf7c1a5d67a2eb553f034aef41d55/x264-b35605ace3ddf7c1a5d67a2eb553f034aef41d55.tar.gz"
+    },
+    {
+      "archive": "sources/nv-codec-headers-n12.1.14.0.tar.gz",
+      "folder": "nv-codec-headers",
+      "sha256": "2fefaa227d2a3b4170797796425a59d1dd2ed5fd231db9b4244468ba327acd0b",
+      "url": "https://codeload.github.com/FFmpeg/nv-codec-headers/tar.gz/refs/tags/n12.1.14.0"
+    }
+  ],
+  "buildRecipe": [
+    {
+      "file": "build-support/media/build.sh",
+      "sha256": "48ec5170a3b1d1e4fd7004d0d7bb33119dea188403dfac110f5f774aa1109ab4"
+    },
+    {
+      "file": "build-support/media/BuildMedia.py",
+      "sha256": "e624f34f3ef66d207b74899109616fa30cc6622acffe1941ecff11504a1efd83"
+    },
+    {
+      "file": "build-support/media/inputs.json",
+      "sha256": "2bffe4ac556c1001d4e9dea34fd46f8174fc5d5194cda28065058ded0f80bf7b"
+    },
+    {
+      "file": "build-support/media/prepare-generated.py",
+      "sha256": "683642285f765dcc408a171161484ed7ffe371b551a5047129472b5dda105b34"
+    }
+  ],
+  "toolchain": {
+    "version": "2.11.0",
+    "file": "w64devkit-x64-2.11.0.7z.exe",
+    "url": "https://github.com/skeeto/w64devkit/releases/download/v2.11.0/w64devkit-x64-2.11.0.7z.exe",
+    "sha256": "54c2bb9962e8a30c8270e34c5efc3d5fee579f53087fa7d435b95fbba2af7b2b",
+    "publisherSource": "https://github.com/skeeto/w64devkit/releases/tag/v2.11.0",
+    "sourceArchive": "https://github.com/skeeto/w64devkit/releases/download/v2.11.0/source.tar"
+  },
+  "assembler": {
+    "version": "2.16.03",
+    "file": "nasm-2.16.03-win64.zip",
+    "url": "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/win64/nasm-2.16.03-win64.zip",
+    "sha256": "3ee4782247bcb874378d02f7eab4e294a84d3d15f3f6ee2de2f47a46aa7226e6",
+    "sourceArchive": "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/nasm-2.16.03.tar.xz"
+  },
+  "nativeExternalLibraries": [
+    "x264"
+  ],
+  "apiHeaders": [
+    "nv-codec-headers"
+  ],
+  "completeCorrespondingSourceConfirmed": true,
+  "generatedChanges": "Windows ar response files; generic paths in generated configuration metadata.",
+  "byteForByteReproducibilityClaimed": false
+}

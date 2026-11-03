@@ -1,0 +1,56 @@
+EyeCopy — licenses and corresponding source
+
+Authored EyeCopy application, companion and build files are licensed under the
+GNU General Public License, version 3 or later. See LICENSE. Third-party files
+retain their own copyright notices and license terms.
+
+The portable distribution includes authored source under Sources/EyeCopy and
+dependency notices and matching source materials under LICENSES. Keep those
+materials with any redistributed covered binary. The source repository contains
+the authored files, manifests and build recipes. Release assets include the
+dependency archives; the build utility restores them from pinned upstream URLs.
+
+The USB transfer engine uses pymobiledevice3 7.6.0 (GPL version 3). Its pinned
+upstream source archive, publisher checksum and the wheel's generated version
+file are supplied. pymobile-source-verification.json records the source-to-wheel
+comparison. Apple proprietary drivers and pairing records are not distributed.
+
+The media executable is built from FFmpeg 7.1, x264 and NVIDIA codec API headers.
+Its only external linked media library is x264. It is licensed under GPL version
+3 or later. Exact unmodified archives, hashes and build recipes are supplied.
+FFmpeg-source-verification.json records verification against the official signed
+FFmpeg release. FFmpeg-provenance.json records the executable checksum, reported
+configuration and the corresponding source and build inputs. Rebuild it with
+build-support/media/BuildMedia.py. The recipe includes its generated-file changes
+for Windows response files and generic build metadata paths.
+
+The pillow-heif Windows extension uses libheif 1.23.4, libde265 1.1.3 and x265
+4.3+1-e9b8812. Their source archives, source checksums, wheel build workflow,
+MSYS2 package recipes and the applicable x265 patch are supplied. These versions
+were checked against the libraries' exported metadata. HEIF-source-provenance.json
+records the files and hashes. The original upstream wheel notice is preserved
+verbatim, including its upstream x265 version label. GCC runtime exception and
+MinGW runtime notices accompany the native-library build materials.
+
+Electron and Koffi license texts are included. Chromium third-party notices are
+beside EyeCopy.exe. The bundled Python runtime license and installed dependency
+notice inventory are supplied under LICENSES. Build-only packages can appear in
+that inventory without being included in the application runtime.
+
+The Windows setup and uninstaller use NSIS. Its original notices are preserved
+in LICENSES/NSIS-COPYING.txt, with the pinned compiler and installer-engine
+provenance recorded in LICENSES/NSIS-provenance.json. Authored installation,
+cleanup and update source is included with the application source.
+
+The supplied build material permits inspection and rebuilding; byte-for-byte
+reproducibility across different build hosts is not asserted. Component license
+texts govern redistribution and take precedence over inventory summaries.
+
+Primary references:
+  https://github.com/doronz88/pymobiledevice3/tree/v7.6.0
+  https://ffmpeg.org/legal.html
+  https://ffmpeg.org/download.html
+  https://code.videolan.org/videolan/x264
+  https://github.com/FFmpeg/nv-codec-headers
+  https://github.com/bigcat88/pillow_heif/tree/v1.8.0
+  https://github.com/msys2/MINGW-packages

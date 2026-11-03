@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EyeCopy · Operating guide</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#100c0b;color:#fff5ef;font:16px/1.65 system-ui,sans-serif}main{max-width:900px;margin:auto;padding:44px 32px 64px}h1{font-size:38px;letter-spacing:-1px;line-height:1.2;margin:10px 0 20px}h2{margin-top:36px;color:#ff943e;font-size:23px}p,li{color:#e9dcd4}a{color:#ffae67}strong{color:#fff}header small{color:#ff943e;letter-spacing:2px}.panel{padding:20px 24px;border:1px solid #663124;border-radius:16px;background:linear-gradient(125deg,#27140e,#1b1010)}.panel p:last-child{margin-bottom:0}code{background:#362019;padding:2px 6px;border-radius:5px;overflow-wrap:anywhere}nav{display:flex;gap:10px 20px;flex-wrap:wrap;margin:24px 0}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid #443028}th{color:#fff}footer{border-top:1px solid #443028;margin-top:40px;padding-top:20px;color:#c6b4a9}@media(max-width:600px){main{padding:28px 20px}h1{font-size:32px}.panel{padding:16px}}
+</style>
+</head>
+<body><main>
+<header><small>EYECOPY · WINDOWS</small><h1>Setup and use</h1><p>Browse device media, transfer originals and manage shared app documents.</p></header>
+<nav aria-label="Guide sections"><a href="#setup">Connect</a><a href="#downloads">Download</a><a href="#uploads">Upload</a><a href="#previews">Preview</a><a href="#queue">Transfer queue</a><a href="#cleanup">Cleanup</a><a href="#settings">Settings</a><a href="#updates">Updates</a><a href="#uninstall">Uninstall</a></nav>
+<section id="setup">
+<h2>Install and connect</h2>
+<p>Download <strong>Setup-EyeCopy-1.0.0.exe</strong> from the repository's Releases page and follow setup. It installs EyeCopy for your Windows account, normally in <code>%LOCALAPPDATA%\Programs\EyeCopy</code>, and creates an uninstall entry. Open EyeCopy from its shortcut.</p>
+<p>For portable use, download <strong>EyeCopy-Windows-x64.zip</strong>, extract its entire <strong>EyeCopy</strong> folder to a writable local location, and open <strong>EyeCopy.exe</strong>. Keep the package files together. Both packages target Windows 10/11 on Intel/AMD x64 and include the application runtimes and preview tools.</p>
+<div class="panel"><strong>Apple USB support is required</strong><p>EyeCopy needs a compatible Apple USB driver and background device transport. If these are missing, install <a href="https://apps.microsoft.com/detail/9NP83LWLPZ9K">Apple Devices from the Microsoft Store</a>, using <a href="https://support.apple.com/en-us/118290">Apple's download guidance</a>. Open it once to complete setup. Connect your unlocked device with a data-capable cable and approve <strong>Trust</strong> on the device when requested.</p><p>Existing compatible Apple support can be reused. The Apple Devices window can stay closed afterward; its background USB support must remain available. For a USB 3 link, the device, cable and PC port must all support USB 3. Installing Apple Devices does not guarantee 10 Gbps throughput or any particular file-copy speed.</p></div>
+<p>Choose the device under <strong>Your devices</strong>. The device panel shows available connection, battery, storage and USB link details. If it is not detected, unlock it, check the cable and port, and see whether Apple Devices recognizes it. Follow <a href="https://support.apple.com/en-us/108643?device-type=windows-pc">Apple's connection checklist</a> for further help.</p>
+</section>
+<section>
+<h2>Browse your files</h2>
+<p><strong>Photos App</strong> displays camera photos and videos. Verified Live Photo pairs appear together with a LIVE badge; downloading one includes its still image and motion video. Search, sort, type filters and grid/list views help navigate the catalogue. <strong>Show hidden</strong> reveals AAE sidecars and unsupported media entries without removing them from the device.</p>
+<p><strong>Files App</strong> displays document directories exposed by participating apps through USB File Sharing. Open an app directory and use folder tiles or breadcrumbs to navigate. This service does not expose every location in Files, iCloud Drive, Safari Downloads or private app storage.</p>
+<p>When disconnected, the saved catalogue and cached previews remain available. Thumbnails load automatically as they become visible. A file without a saved preview needs the device before a new preview can be obtained.</p>
+</section>
+<section id="downloads">
+<h2>Download and locate originals</h2>
+<p>Select files and choose <strong>Download selected</strong>. With nothing selected, the same button selects all displayed files. Downloads initially use <code>Videos\EyeCopy\device name</code>. Each device has its own folder. The folder icon beside the device opens its downloads in Explorer; the edit icon renames the device and its child folder when Windows permits the name.</p>
+<p><strong>On PC</strong> identifies a verified original in the device's current default folder. Refresh checks this folder and removes stale marks after local deletion. Default bulk downloads skip these copies and already queued duplicates. Selecting only verified copies displays <strong>Already on PC</strong>. Copies in other destinations do not receive the mark.</p>
+<p>Double-click a preview thumbnail to download its original, or reveal its verified PC copy in Explorer. Drag a tile or its <strong>Drag original</strong> handle into an Explorer folder for a targeted copy. Local originals use Windows file copying. Device-only originals start transferring after the drop destination is confirmed; <strong>Choose folder…</strong> is available if Windows cannot report that destination. A temporary destination ticket may appear during the drop.</p>
+<p>Downloaded originals retain their original media format. Preview conversion does not alter them.</p>
+</section>
+<section id="uploads">
+<h2>Upload to Files</h2>
+<p><strong>Upload to Files</strong> opens the Windows file picker. On first use, choose an installed app with USB File Sharing. EyeCopy remembers that provider and creates an <strong>EyeCopy</strong> folder inside its shared Documents folder. Button uploads go there and show the folder when finished.</p>
+<p>In Files App, drag PC files into the displayed directory or onto a folder tile to upload there. Use <strong>New folder</strong> to create a directory. Upload completion refreshes the listing without switching to the transfer queue.</p>
+<p>The visible on-device location depends on the provider. An app may expose it as <code>On My iPhone / On My iPad &gt; app name &gt; EyeCopy</code>. A separate EyeCopy app container requires the optional signed device companion. The desktop application cannot create an iOS app container by itself. Companion source is included for developers and requires separate Apple signing and installation; ordinary shared-app transfers do not need it.</p>
+</section>
+<section id="previews">
+<h2>Photos and video playback</h2>
+<p>Choose a file to see its preview and details. Cached image previews do not mean that the original has been downloaded. Video details show duration when metadata can be read. The player provides play/pause, an original-duration timeline, volume and fullscreen controls.</p>
+<p><strong>Stream from device</strong> reads media for playback without saving the original to the download folder. <strong>Play downloaded original</strong> uses a verified PC copy and works while the device is disconnected. If the native format is unsupported, try the compatible preview option. Seeking in a converted preview starts a new segment at the selected time, with a buffering indicator while it loads.</p>
+</section>
+<section id="queue">
+<h2>Transfer progress and interruptions</h2>
+<p>The queue shows destination, bytes, progress, measured MB/s and transfer controls. Sort by newest, oldest, name or status; <strong>Hide completed</strong> filters history without deleting it. <strong>Stop all</strong> stops active and pending work, including batches still being prepared. When no active work remains, it becomes <strong>Clear all</strong> to remove entries without deleting completed originals. Entries awaiting temporary-file cleanup remain visible until cleanup succeeds.</p>
+<p>Pause, stop or retry individual transfers from their queue entries. A complete partial download can sometimes be finalized by Retry without fetching its bytes again; retry before clearing the entry if you want to retain that work. Disconnecting leaves the cached catalogue available and shows an offline prompt. Reconnecting restores device access.</p>
+<p><strong>Change folder</strong> above the queue sets a destination override. <strong>Reset</strong> restores the applicable device's folder under the shared default location. Transfers already queued retain their destinations.</p>
+</section>
+<section id="cleanup">
+<h2>Delete and restore</h2>
+<table><thead><tr><th>Action</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Delete from device</strong> in Files App</td><td>Permanently deletes the confirmed shared-app files or folders, including approved folder contents. PC copies remain. Recently Deleted and Undo are unavailable for this operation.</td></tr>
+<tr><td><strong>Delete from PC</strong> in file details</td><td>Moves selected eligible, unchanged tracked downloads from the default device folder to the Windows Recycle Bin after confirmation. Device originals remain.</td></tr>
+<tr><td>Trash icon beside a device</td><td>Offers PC cleanup of eligible tracked downloads in its default folder. Device originals, untracked files, changed files and custom destinations remain.</td></tr>
+</tbody></table>
+<p>Photos-library deletion is unavailable through this USB route. A selected Live Photo includes both original components when eligible for PC cleanup.</p>
+<p>The toolbar and <strong>Ctrl+Z / Ctrl+Y</strong> undo or redo supported selection, navigation, destination, device-name and PC-cleanup actions. Restoring PC files requires their recorded copies to remain in the Recycle Bin and does not overwrite newer files. Downloads and permanent device deletion cannot be undone. Text fields keep their normal text undo behavior.</p>
+</section>
+<section id="settings">
+<h2>Settings and background use</h2>
+<p>Open <strong>Settings</strong> at the bottom left to choose a dark color theme, change the shared default folder or toggle <strong>Keep running in the background</strong>. Preferences save automatically.</p>
+<p><strong>Change default folder</strong> chooses the parent location for the EyeCopy folder containing all devices. This affects future downloads and stays through restarts; existing files are not moved, copied or deleted. Undo and Redo can restore the preference without migrating files.</p>
+<p>With background use enabled, closing the window keeps EyeCopy in the notification area. Click its eye icon to reopen it, or choose <strong>Quit EyeCopy</strong> to stop it. With background use disabled, closing the window quits. A newly connected device can open the window while EyeCopy is running; EyeCopy does not register a Windows startup task.</p>
+</section>
+<section id="updates">
+<h2>Check for updates</h2>
+<p>Open <strong>Settings</strong> to check for a newer release and choose automatic update checks. <strong>UpdateEyeCopy.exe</strong> in the application folder opens the same controls. Checks use the publisher's public GitHub release repository. If the package does not supply one, enter the repository URL in Settings. Automatic checks are enabled by default when a repository is configured and can be turned off. With no repository configured, EyeCopy makes no update requests.</p>
+<p>The updater downloads the versioned Windows setup asset from a stable release and verifies it against that release's <strong>SHA256SUMS.txt</strong>. Installation requires confirmation. Updates preserve settings, catalogues, cached previews and downloaded originals.</p>
+<p>For a manual update, quit EyeCopy from its notification-area menu and run the new setup. For portable use, you can instead extract the complete updated package into a new folder. Settings and previews are stored separately from the application, normally in <code>%LOCALAPPDATA%\EyeCopy</code>.</p>
+</section>
+<section id="uninstall">
+<h2>Uninstall and clear application data</h2>
+<p>Quit EyeCopy, then use its entry in Windows <strong>Settings → Apps → Installed apps</strong>, or open <strong>UninstallEyeCopy.exe</strong> in its application folder. Review the application and profile locations shown, then confirm removal.</p>
+<p>The uninstaller removes verified application files and clears known data in verified EyeCopy profiles, including its default <code>%LOCALAPPDATA%\EyeCopy</code> location and registered dedicated custom profiles. This clears settings, saved devices, catalogues, history, download tracking, preview caches and logs. A reinstall starts with a fresh catalogue.</p>
+<p><strong>Downloaded photos and videos remain in their saved folders.</strong> Their previous <strong>On PC</strong> tracking is cleared with the profile; the files remain usable in File Explorer. Device originals, shared Apple USB support and other applications' profiles stay in place. The cleanup verifies ownership and folder safety. Unrelated files, modified application files, locked items and unverified locations are retained and reported for manual review; their containing folders may remain.</p>
+<p>Deleting the application folder by hand leaves its separate profile in place. Use the included uninstaller when you want that application data cleared too.</p>
+</section>
+<footer><a href="Transport%20Options.html">USB connection details</a> · <a href="https://support.apple.com/en-us/120402">Apple File Sharing</a> · <a href="https://support.apple.com/en-us/109054">Apple Trust guidance</a></footer>
+</main></body></html>

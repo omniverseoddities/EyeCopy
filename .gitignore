@@ -1,0 +1,30 @@
+# Local runtimes and generated output
+node_modules/
+.venv/
+.tools/
+vendor/
+__pycache__/
+*.py[cod]
+build-work/
+build-output/
+release/
+artifacts/
+.staging/
+test-output/
+assets/native/*.exe
+
+# Local application data, personal files and diagnostics
+data/
+downloads/
+.eyecopy-cache/
+*.log
+diagnostics/*.json
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.mobileprovision
+
+# Unmodified third-party archives are distributed as release assets
+LICENSES/sources/
