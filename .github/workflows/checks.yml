@@ -32,6 +32,8 @@ jobs:
         run: .venv\Scripts\python.exe -m unittest discover -s tests -p test_*.py
       - name: Test desktop services
         run: node --test tests/*.test.js
+      - name: Build uninstall cleanup helper
+        run: .venv\Scripts\python.exe -c "import sys; sys.path.insert(0, 'build-support'); from BuildInstaller import helper; helper()"
       - name: Test uninstall safety
         run: .venv\Scripts\python.exe installer\TestCleanup.py
       - name: Test update launcher
