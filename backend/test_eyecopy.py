@@ -36,7 +36,7 @@ class FilesAFC(FakeAFC):
 class EyeCopyTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.afc = FilesAFC()
         self.events = []
         self.phone = device_key("fixture-one")

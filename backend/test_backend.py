@@ -113,7 +113,7 @@ class FakeAFC:
 class EngineTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
-        self.directory = Path(self.temporary.name)
+        self.directory = Path(self.temporary.name).resolve()
         self.afc = FakeAFC()
         self.events = []
         self.device_id = device_key("a-private-phone-serial")

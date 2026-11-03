@@ -16,7 +16,7 @@ from backend.test_backend import FakeAFC
 class DownloadLibraryTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
-        self.root = Path(self.temporary.name)
+        self.root = Path(self.temporary.name).resolve()
         self.afc = FakeAFC()
         self.phone = device_key("synthetic-download-library-phone")
 

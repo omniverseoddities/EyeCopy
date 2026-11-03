@@ -241,7 +241,7 @@ class Engine:
         self._queue_generation_lock = threading.Lock()
         self.selected_device: str | None = None
         self.current_scope: str | None = None
-        self.download_root = Path(download_dir).expanduser().resolve() if download_dir else Path.home() / "Videos" / "EyeCopy"
+        self.download_root = self._canonical_directory_path(download_dir or Path.home() / "Videos" / "EyeCopy")
         self._download_layout_version = 0
         self.download_dir = str(self.download_root)
         self.connection = {"status": "offline", "message": "Connect and unlock your Device to start.", "serviceAvailable": False}
@@ -274,7 +274,7 @@ class Engine:
             self._devices = {d["id"]: {**d, "online": False} for d in data.get("devices", []) if isinstance(d, dict) and re.fullmatch(r"iphone-[0-9a-f]{20}", str(d.get("id", "")))}
             saved_root = data.get("downloadRootDir")
             if isinstance(saved_root, str) and Path(saved_root).is_absolute():
-                self.download_root = Path(saved_root)
+                self.download_root = self._canonical_directory_path(saved_root)
             self._download_layout_version = int(data.get("downloadLayoutVersion", 0))
             self._catalogues = data.get("catalogues", {})
             for items in self._catalogues.values():
@@ -478,7 +478,7 @@ class Engine:
 
     def _ensure_device_directories_locked(self) -> None:
         used = set()
-        assigned = {os.path.normcase(str(Path(device["defaultDownloadDir"]).expanduser().absolute()))
+        assigned = {os.path.normcase(str(self._canonical_directory_path(device["defaultDownloadDir"])))
                     for device in self._devices.values() if device.get("defaultDownloadDir")
                     and (device.get("defaultDownloadKind") == "custom" or not self._legacy_numbered_default(device["defaultDownloadDir"]))}
         for device in self._devices.values():
@@ -495,10 +495,12 @@ class Engine:
                 device["downloadNumber"] = number
                 used.add(number)
             old_default = device.get("defaultDownloadDir")
+            canonical_old = self._canonical_directory_path(old_default) if old_default else None
             if old_default and (device.get("defaultDownloadKind") == "custom" or not self._legacy_numbered_default(old_default)):
-                default = str(Path(old_default).expanduser().absolute())
+                default = str(canonical_old)
                 device.setdefault("defaultDownloadKind", "custom" if Path(default).parent != self.download_root else "generated")
                 device.setdefault("defaultBaseDir", str(Path(default).parent))
+                device["defaultBaseDir"] = str(self._canonical_directory_path(device["defaultBaseDir"]))
                 # Existing custom exact-folder settings are preserved until the
                 # user chooses a parent or explicitly renames their phone.
                 device.setdefault("defaultPhoneNamed", device["defaultDownloadKind"] == "generated")
@@ -536,7 +538,10 @@ class Engine:
                     device["previousDownloadDir"] = old_default
             assigned.add(os.path.normcase(default))
             device["defaultDownloadDir"] = default
-            if not device.get("downloadDir") or device.get("downloadDir") == old_default:
+            queue = device.get("downloadDir")
+            # Queue overrides may be external/disconnected locations. Do not
+            # probe them while refreshing default-folder tracking.
+            if not queue or (old_default and Path(queue) in {Path(old_default), canonical_old}):
                 device["downloadDir"] = default
 
     @staticmethod
@@ -560,6 +565,26 @@ class Engine:
             return path.is_dir() if require_directory else True
         except (OSError, ValueError):
             return False
+
+    @classmethod
+    def _canonical_directory_path(cls, value: str | Path) -> Path:
+        """Expand filesystem aliases without hiding a link from later guards.
+
+        Windows TEMP and saved folder choices can use NTFS 8.3 names. Compare
+        ordinary configured directories in the same spelling as completed
+        downloads. Candidate download records are never resolved by this helper.
+        """
+        directory = Path(value).expanduser().absolute()
+        existing = directory
+        # lexists retains broken junctions/symlinks for the reparse checks.
+        while not os.path.lexists(existing) and existing != existing.parent:
+            existing = existing.parent
+        if cls._plain_directory_path(existing):
+            try:
+                return directory.resolve()
+            except OSError:
+                pass
+        return directory
 
     @staticmethod
     def _repath_under(value: Any, old: Path, new: Path) -> Any:
@@ -667,7 +692,7 @@ class Engine:
 
     def _legacy_numbered_default(self, value: str) -> bool:
         try:
-            path = Path(value).expanduser().absolute()
+            path = self._canonical_directory_path(value)
             return path.parent == self.download_root and re.fullmatch(r"iphone-[1-9][0-9]*", path.name) is not None
         except (OSError, ValueError, TypeError):
             return False
@@ -735,6 +760,7 @@ class Engine:
                 "devices": {identifier: self._location_preferences(device) for identifier, device in self._devices.items()}}
 
     def _global_location_target_locked(self, root: Path) -> dict:
+        root = self._canonical_directory_path(root)
         result, used = {}, set()
         for identifier, device in self._devices.items():
             name, suffix = self._phone_folder_name(device), 2
@@ -757,13 +783,13 @@ class Engine:
         if root.exists() and not root.is_dir():
             raise UserError("That EyeCopy location is a file. Choose another parent folder.")
         existing = root
-        while not existing.exists() and existing != existing.parent:
+        while not os.path.lexists(existing) and existing != existing.parent:
             existing = existing.parent
         if not self._plain_directory_path(existing):
             raise UserError("Choose an ordinary EyeCopy folder and parent, not a link or junction. Existing files were kept.")
 
     def _apply_global_location_locked(self, snapshot: dict) -> None:
-        self.download_root = Path(snapshot["rootPath"])
+        self.download_root = self._canonical_directory_path(snapshot["rootPath"])
         for identifier, preferences in snapshot["devices"].items():
             if identifier in self._devices:
                 self._devices[identifier].update(preferences)
@@ -774,7 +800,7 @@ class Engine:
     def _set_global_download_root(self, parent: str) -> dict:
         if not isinstance(parent, str) or not parent:
             raise UserError("Choose a parent folder for EyeCopy.")
-        target = Path(parent).expanduser().resolve() / "EyeCopy"
+        target = self._canonical_directory_path(parent) / "EyeCopy"
         self._validate_global_root(target)
         with self._destructive_lock:
             with self.lock:
